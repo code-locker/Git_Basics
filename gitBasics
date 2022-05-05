@@ -1,0 +1,52 @@
+git --version
+
+First time setup
+----------------
+1. git config --global user.name "code-locker"
+2. git config --global user.email "abhikunjathodi@gmail.com"
+3. git config --list
+
+
+Git help commands
+-----------------
+1. git help <verb>
+Ex: git help config
+2. git <ver> --help
+Ex: git config help
+
+Tracking Local repository
+-------------------------
+For example, If you want to track files present inside folder named "Folder" follow below steps.
+1. cd Folder
+2. git init 
+-Above command will create folder named .git
+-Check the same using "ls -la" command
+3. git status 
+-You can check the working tree status using above command
+-It will list the untracked files
+
+Steps to hide files from viewers
+--------------------------------
+If you want hide a file which contains usefull information then follow below steps.
+1. touch .gitignore
+-Inside Tracking folder create a .gitignore file
+2. write the file names which you ant to ignore
+Ex:
+	1. To hide all the python files add below line in .gitignore file
+		*.py
+	2. To hide file.txt file add file in the .gitignore file 
+
+Add/remove files to Staging Area and commit
+--------------------------------------------
+1. git add -A
+-This will add all untracked files to repository
+-Also you can add individual file as below
+	git add filename
+2. git reset
+-This command will remove files from staging area
+3. git commit -m "your message"
+-This command will add staging area files to repository
+4. git status
+5. git log
+-Above command will display the hash for commited files along with author details.
+
