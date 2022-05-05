@@ -82,11 +82,33 @@ echo "# Git_Basics" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
+git branch -M master
 git remote add origin https://github.com/code-locker/Git_Basics.git
 git push -u origin master
 
-Create a branch and push the code to newely created branch
-----------------------------------------------------------
-git branch -M main
-git remote add origin https://github.com/code-locker/Git_Basics.git
-git push -u origin main
+Creating a new branch
+----------------------
+ git branch <branch-name>
+ 
+ Switching to another branch
+ ----------------------------
+ 1. git checkout <branch-name>
+ 
+ List all branches
+ -----------------
+ 1. git branch -a
+ 
+ Merge Branch with master repository
+ -----------------------------------
+ 1. git checkout master
+ 2. git pull origin master //fecthes the changes done to master branch
+ 3. git branch --merged //lists the merged branches
+ 4. git merge <branch-name>
+ 5. git push origin master
+ 
+ Deleting a branch locally
+ -------------------------
+ 1. git branch -d <branch-name> 
+ -Above command will delete branch locally. To reflect same in remote repository execute git push command
+ 2. git push origin --delete <branch-name>
+ 
