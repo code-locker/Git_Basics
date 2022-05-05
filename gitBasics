@@ -74,4 +74,19 @@ git pull is a Git command used to update the local version of a repository from 
 2. git push origin <branch>
 Ex: git push origin master
 -This command will updates the changes done in local reporitory into remote repository
--git push command is used to upload content to a remote repositoryS
+-git push command is used to upload content to a remote repository
+
+Create a new repository on the command line
+-------------------------------------------
+echo "# Git_Basics" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/code-locker/Git_Basics.git
+git push -u origin master
+
+Create a branch and push the code to newely created branch
+----------------------------------------------------------
+git branch -M main
+git remote add origin https://github.com/code-locker/Git_Basics.git
+git push -u origin main
