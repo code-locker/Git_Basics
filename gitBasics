@@ -50,3 +50,25 @@ Add/remove files to Staging Area and commit
 5. git log
 -Above command will display the hash for commited files along with author details.
 
+Clone remote repository
+-----------------------
+1. git clone <url> <desinatio path>
+
+Viewing information about remote repositoty after cloning
+---------------------------------------------------------
+1. git remote -v
+
+Listing remote repository branch
+--------------------------------
+1. git branch -a
+
+View the changes done in the repository
+---------------------------------------
+1. git diff
+
+Pull and Push changes done
+--------------------------
+1. git pull origin <branch>
+2. git push origin <branch>
+Ex: git push origin master
+-This command will updates the changes done in local reporitory into remote repository
