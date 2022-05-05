@@ -69,6 +69,9 @@ View the changes done in the repository
 Pull and Push changes done
 --------------------------
 1. git pull origin <branch>
+Ex: git pull origin master
+git pull is a Git command used to update the local version of a repository from a remote.
 2. git push origin <branch>
 Ex: git push origin master
 -This command will updates the changes done in local reporitory into remote repository
+-git push command is used to upload content to a remote repositoryS
