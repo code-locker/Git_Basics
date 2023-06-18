@@ -184,3 +184,9 @@ Update local branch from remote master/main branch
 --------------------------------------------------
 git pull = git fetch + git merge
 1. git pull origin <current local branch>
+
+Update branch with master branch in local repository
+----------------------------------------------------
+1. Make sure local master branch is updated with remote master branch
+2. Rebase the branch with master branch
+   git rebase master <branch-name>
