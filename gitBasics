@@ -42,8 +42,8 @@ Add/remove files to Staging Area and commit
 -This will add all untracked files to repository
 -Also you can add individual file as below
 	git add filename
-2. git reset
--This command will remove files from staging area
+2. git reset or git restore –staged <filename>
+-This command will remove files from staging area and adds to untracked file list.
 3. git commit -m "your message"
 -This command will add staging area files to repository
 4. git status
@@ -112,3 +112,75 @@ Creating a new branch
  -Above command will delete branch locally. To reflect same in remote repository execute git push command
  2. git push origin --delete <branch-name>
  
+Consider there are four commits done. If we want to delete 3rd and 4th commits follow below steps.
+--------------------------------------------------------------------------------------------------
+1. Check hash id of 2nd commit using git log.
+2. git reset <hash-id>
+Note: after this 3rd and 4th commit will in unstaged state.
+3. git add .
+4. git stash
+5. git commit -m “message”
+6. git push origin <branch-name> [-f]
+
+Moving changes to backstage.
+----------------------------
+Example: I have done some changes in the code. I want to write fresh code, but want keep this changes somewhere else and refer the code in future. So add current changes to backstage.
+1. Add changes to stagged area.
+   git add *
+2. git stash
+3. Moving files back to stagged area from backstage
+   git stash pop
+4. To remove files from stash
+   git stash clean
+
+Create repository and commit local changes
+------------------------------------------
+1. Create a new repository in github (Using browser) and copy the URL.
+2. Adding URL to local project.
+   git remote add origin <URL>
+   Note: origin is URL
+3. Push the changes to URL [branch]
+   git push origin master
+
+Contributing to Opensource project
+----------------------------------
+1. Fork open-source repository (GUI).
+2. Clone it into local from your repository
+3. Add upstream URL
+   git remote add upstream <Opensource project URL>
+4. Create new branch
+   git branch <branch-name>
+5. Checkout new branch
+   git checkout <branch-name>
+6. Add files to stagged area and commit
+7. Push the changes to your branch
+   git push origin <branch-name>
+8. Create a pull request in GUI
+   Note: 
+	- In GUI, make sure main branch where you need to merge and your branch.
+	- If branch has pull request associated with it, then again it will not allow to create a another pull request. What are the changes you will commit it will reflects in the already existing pull request.
+9. Merge Pull request [Done by repository owner]
+
+Follow below steps to your main branch to update allong with upstream branch.
+-----------------------------------------------------------------------------
+Method 1:
+1. Checkout your main branch.
+2. git fetch –all
+3. git reset –hard upstream/main
+4. git push origin main
+
+Method 2:
+1. git pull upstream main 
+2. git push origin main
+
+Squash multiple commits to single commit
+----------------------------------------
+1. git rebase –interactive HEAD~2 
+Change pick to squash in GUI for the commits to be squashed, then Control+X -> Y ->Enter
+Comment the comments which you want to squash using # symbol, then Control+X -> Y ->Enter
+2. git push origin main
+
+Update local branch from remote master/main branch
+--------------------------------------------------
+git pull = git fetch + git merge
+1. git pull origin <current local branch>
